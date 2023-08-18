@@ -6,7 +6,7 @@ namespace CityAPI.Controllers
     [Route("api/[controller]")]
     public class CitiesController : ControllerBase
     {
-        [HttpGet("jsonresult")]
+        [HttpGet]
         public IActionResult JsonResult()
         {
             var cities = new[]
