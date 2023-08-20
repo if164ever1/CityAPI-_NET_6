@@ -9,13 +9,13 @@ namespace CityAPI.Controllers
         [HttpGet]
         public IActionResult JsonResult()
         {
-            var cities = new[]
-            {
-                new {id = 1, Name = "Lwiw"},
-                new {id = 2, Name = "Ivano-Frankivsk"}
-            };
+            return Ok(CityDataStore.Instance.cities);
+        }
 
-            return Ok(cities);
+        [HttpGet("{id}")]
+        public IActionResult Index(int id) 
+        {
+            return Ok(CityDataStore.Instance.cities.FirstOrDefault(c => c.Id == id));
         }
     }
 }
